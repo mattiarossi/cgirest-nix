@@ -23,7 +23,7 @@ Please note that this is by no means a standalone package, in order to be able t
 - a working Nixos development environment
 - a working Virtualbox or Amazon EC2 instance
 
-##Installation
+##Installation and usage
 
 Create a deployment (a virtualbox instance in this case):
 
@@ -721,7 +721,7 @@ and we can also assign a task to a specific cgroup:
 ```
 curl -i -X  POST "http://192.168.56.101/rest/cgroups/" \
 --data-binary '{"setTask":{"cgroup": "systemd/system/dhcpcd.service","task": "20395"}}'
-```
+``
 
 ```
 HTTP/1.1 200 OK
@@ -752,7 +752,12 @@ Content-Type: application/json
 ```
 
 
+##Additional info
 
+The code consists of a generic php class that implements a generic REST api on top of which a custom handler has been defined in order to 
+implement the requested features. The handler queries the cgroups file structure in order to retrieve the requested data, and uses a shell script to associate tasks with cgroups running it with sudo in order to be able to modify the cgroups file system.
+
+The apache server has been configured to run php scripts using fastcgi and to rewrite URLs so that any string following the default uri part /rest/ is considered a parameter and fed to the php handler.
 
 
 
