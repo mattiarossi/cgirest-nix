@@ -8,8 +8,6 @@ let
    stdenv = pkgs.stdenv;
 in rec {
 
-  php = pkgs.php54 {};
-
   # Defines our application package
   cgiapp = stdenv.mkDerivation {
     name = "cgirest";

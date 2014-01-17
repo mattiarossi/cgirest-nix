@@ -29,7 +29,7 @@ class cgroups {
 					$statuscode = 200;
 					break;
 				case 'POST':
-					$res["action"] = "Associate task to cgroup, params cg and t required!";
+					$res["action"] = "Associate task to cgroup, params cgroup and task required!";
 					$res["result"] = "";
 					if ($data['query']['setTask'] === null){
 						$res["result"] = "Error - wrong input format";
@@ -38,7 +38,7 @@ class cgroups {
 						$cgroup = $data['query']['setTask']['cgroup'];
 						$task   = $data['query']['setTask']['task'];
 						if ($cgroup === null || $task===null){
-							$res["result"] = "Error - parameters cg and t have to be provided";
+							$res["result"] = "Error - parameters cgroup and task have to be provided";
 						}else{
 							if ($localGroups[$cgroup] === null){
 								$res["result"] = "Error - cgroup $cgroup does not exist";
