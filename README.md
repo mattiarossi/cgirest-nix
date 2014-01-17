@@ -25,9 +25,14 @@ Please note that this is by no means a standalone package, in order to be able t
 
 ##Installation
 
-- Create a deployment (a virtualbox instance in this case):
+Create a deployment (a virtualbox instance in this case):
 
 `nixops create network.nix infrastructure-vbox.nix --name node-vbox2`
+
+and then deploy it:
+
+`nixops deploy -d node-vbox2`
+
 
 ##API Syntax
 
