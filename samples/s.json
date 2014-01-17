@@ -1,0 +1,6 @@
+{
+    "setTask": {
+        "cgroup": "one",
+        "task": "two"
+    }
+}
