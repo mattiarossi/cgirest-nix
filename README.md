@@ -55,7 +55,7 @@ and do a curl request to the url
 
 `http://<ip address>/rest/cgroups/`
 
-In my case <ip address> is 192.168.56.101 and this is a log of a curl request with no parameters that will return all the available cgroups and their associated tasks:
+In my case the ip address is 192.168.56.101 and this is a log of a curl request with no parameters that will return all the available cgroups and their associated tasks:
 
 `curl -i -XGET "http://192.168.56.101/rest/cgroups/"`
 
@@ -721,7 +721,7 @@ and we can also assign a task to a specific cgroup:
 ```
 curl -i -X  POST "http://192.168.56.101/rest/cgroups/" \
 --data-binary '{"setTask":{"cgroup": "systemd/system/dhcpcd.service","task": "20395"}}'
-```
+``
 
 ```
 HTTP/1.1 200 OK
