@@ -721,7 +721,7 @@ and we can also assign a task to a specific cgroup:
 ```
 curl -i -X  POST "http://192.168.56.101/rest/cgroups/" \
 --data-binary '{"setTask":{"cgroup": "systemd/system/dhcpcd.service","task": "20395"}}'
-``
+```
 
 ```
 HTTP/1.1 200 OK
